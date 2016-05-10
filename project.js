@@ -12,13 +12,13 @@ var signs =[];
 var aries, taurus, gemini, cancer, leo, virgo, libra, scorpio, sagittarius, capricorn, aquarius, pisces;
 var aries1, taurus1, gemini1, cancer1, leo1, virgo1, libra1, scorpio1, sagittarius1, capricorn1, aquarius1, pisces1;
 var ariesSymbol, taurusSymbol, geminiSymbol, cancerSymbol, virgoSymbol, libraSymbol, scorpioSymbol, sagittariusSymbol, capricornSymbol, aquariusSymbol, piscesSymbol;
-var option;
-var date;
+//var option;
+//var date;
 var activeSign = "none";
 var topDisplay = "";
 var botDisplay = "";
-var xNum;
-var yNum;
+//var xNum;
+//var yNum;
 
 
 
@@ -115,11 +115,6 @@ function setup(){
 			stars3[i].drawStar();
 		}
 
-
-		scorpio1.drawSign();
-		sagittarius1.drawSign();
-		pisces1.drawSign();
-
 		activeSign = "none";
 
 		if (mouseX>845 && mouseX<945){
@@ -184,6 +179,27 @@ function setup(){
 					virgo1.drawSymbol();
 				}
 		} else {virgo1.drawSign();}
+
+		if (mouseX>144 && mouseX<344){
+				if (mouseY>80 && mouseY<290){
+					activeSign = "scorpio";
+					scorpio1.drawSymbol();
+				}
+		} else {scorpio1.drawSign();}
+
+		if (mouseX>144 && mouseX<344){
+				if (mouseY>80 && mouseY<290){
+					activeSign = "pisces";
+					pisces1.drawSymbol();
+				}
+		} else {pisces1.drawSign();}
+
+		if (mouseX>144 && mouseX<344){
+				if (mouseY>80 && mouseY<290){
+					activeSign = "sagittarius";
+					sagittarius1.drawSymbol();
+				}
+		} else {sagittarius1.drawSign();}
 
 
 
