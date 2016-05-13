@@ -100,17 +100,17 @@ function setup(){
 		none = new SignText ("PAGE TITLE", "Select a sign.");
 
 		ariesT = new SignText ("ARIES", "March 21 - April 19", ariesText);
-		taurusT = new SignText ("Taurus", "It's a lion.");
-		geminiT = new SignText ("GEMINI", "It's a lion.");
-		cancerT = new SignText ("CANCER", "It's a crab.");
-		leoT = new SignText ("LEO", "It's a lion.");
-		virgoT = new SignText ("VIGRO", "It's a lion.");
-		libraT = new SignText ("LIBRA", "It's a crab.");
-		scorpioT = new SignText ("SCORPIO", "It's a crab.");
-		sagittariusT = new SignText ("SAGITTARIUS", "It's a crab.");
-		capricornT = new SignText ("CAPRICORN", "It's a crab.");
-		aquariusT = new SignText ("AQUARIUS", "It's a crab.");
-		piscesT = new SignText ("PISCES", "It's a crab.");
+		taurusT = new SignText ("Taurus", "It's a lion.", taurusText);
+		geminiT = new SignText ("GEMINI", "It's a lion.", geminiText);
+		cancerT = new SignText ("CANCER", "It's a crab.", cancerText);
+		leoT = new SignText ("LEO", "It's a lion.", leoText);
+		virgoT = new SignText ("VIGRO", "It's a lion.", virgoText);
+		libraT = new SignText ("LIBRA", "It's a crab.", libraText);
+		scorpioT = new SignText ("SCORPIO", "It's a crab.", scorpioText);
+		sagittariusT = new SignText ("SAGITTARIUS", "It's a crab.", sagittariusText);
+		capricornT = new SignText ("CAPRICORN", "It's a crab.", capricornText);
+		aquariusT = new SignText ("AQUARIUS", "It's a crab.", aquariusText);
+		piscesT = new SignText ("PISCES", "It's a crab.", piscesText);
 
 
 }
@@ -133,7 +133,7 @@ function setup(){
 
 		activeSign = "none";
 
-		if (mouseX>815 && mouseX<890 && mouseY>550 && mouseY<690){
+		if (mouseX>815 && mouseX<929 && mouseY>550 && mouseY<690){
 					activeSign = "cancer";
 					cancer1.drawSymbol()
 					cancerT.drawText();
@@ -145,7 +145,7 @@ function setup(){
 					leoT.drawText();
 		} else {leo1.drawSign();}
 
-		if (mouseX>130 && mouseX<250 && mouseY>490 && mouseY<600){
+		if (mouseX>130 && mouseX<315 && mouseY>490 && mouseY<600){
 					activeSign = "aries";
 					aries1.drawSymbol();
 					ariesT.drawText();
@@ -178,6 +178,7 @@ function setup(){
 		if (mouseX>349 && mouseX<489 && mouseY>578 && mouseY<700){
 					activeSign = "taurus";
 					taurus1.drawSymbol();
+					taurusT.drawText();
 		} else {taurus1.drawSign();}
 
 		if (mouseX>1090 && mouseX<1166 && mouseY>318 && mouseY<428){
@@ -192,13 +193,13 @@ function setup(){
 					scorpioT.drawText();
 		} else {scorpio1.drawSign();}
 
-		if (mouseX>100 && mouseX<220 && mouseY>307 && mouseY<430){
+		if (mouseX>100 && mouseX<245 && mouseY>307 && mouseY<430){
 					activeSign = "pisces";
 					pisces1.drawSymbol();
 					piscesT.drawText();
 		} else {pisces1.drawSign();}
 
-		if (mouseX>528 && mouseX<650 && mouseY>80 && mouseY<290){
+		if (mouseX>528 && mouseX<750 && mouseY>80 && mouseY<290){
 					activeSign = "sagittarius";
 					sagittarius1.drawSymbol();
 					sagittariusT.drawText();
