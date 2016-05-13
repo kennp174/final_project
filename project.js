@@ -16,6 +16,7 @@ var ariesSymbol, taurusSymbol, geminiSymbol, cancerSymbol, virgoSymbol, libraSym
 //var date;
 var activeSign = "none";
 var topDisplay = "";
+var midDisplay = "";
 var botDisplay = "";
 //var xNum;
 //var yNum;
@@ -37,18 +38,33 @@ function preload (){
 		aquarius = loadImage('img/aquarius.png');
 		pisces = loadImage('img/pisces.png');
 
-		ariesSymbol = loadImage('');
-		taurusSymbol = loadImage('');
-		geminiSymbol = loadImage('');
-		cancerSymbol = loadImage('');
-		leoSymbol = loadImage('');
-		virgoSymbol = loadImage('');
-		libraSymbol = loadImage('');
-		scorpioSymbol = loadImage('');
-		sagittariusSymbol = loadImage('');
-		capricornSymbol = loadImage('');
-		aquariusSymbol = loadImage('');
-		piscesSymbol = loadImage('');
+		ariesSymbol = loadImage('img/symbols/aries.png');
+		taurusSymbol = loadImage('img/symbols/taurus.png');
+		geminiSymbol = loadImage('img/symbols/gemini.png');
+		cancerSymbol = loadImage('img/symbols/cancer.png');
+		leoSymbol = loadImage('img/symbols/leo.png');
+		virgoSymbol = loadImage('img/symbols/virgo.png');
+		libraSymbol = loadImage('img/symbols/libra.png');
+		scorpioSymbol = loadImage('img/symbols/scorpio.png');
+		sagittariusSymbol = loadImage('img/symbols/sagittarius.png');
+		capricornSymbol = loadImage('img/symbols/capricorn.png');
+		aquariusSymbol = loadImage('img/symbols/aquarius.png');
+		piscesSymbol = loadImage('img/symbols/pisces.png');
+
+		ariesText = loadImage('img/text/ariestext.png');
+		taurusText = loadImage('img/text/taurustext.png');
+		geminiText = loadImage('img/text/geminitext.png');
+		cancerText = loadImage('img/text/cancertext.png');
+		leoText = loadImage('img/text/leotext.png');
+		virgoText = loadImage('img/text/virgotext.png');
+		libraText = loadImage('img/text/libratext.png');
+		scorpioText = loadImage('img/text/scorpiotext.png');
+		sagittariusText = loadImage('img/text/sagittariustext.png');
+		capricornText = loadImage('img/text/capricorntext.png');
+		aquariusText = loadImage('img/text/aquariustext.png');
+		piscesText = loadImage('img/text/piscestext.png');
+
+
 }
 
 
@@ -68,22 +84,22 @@ function setup(){
 		stars3.push(new Star3(random(-windowWidth,windowWidth),random(-windowHeight,windowHeight),"white"));
 	}
 
-		aries1 =  new Sign (windowWidth/2-425,windowHeight/2+175, aries, ariesSymbol, "blah blah blah");
-		taurus1 =  new Sign (windowWidth/2-215,windowHeight/2+255, taurus, taurusSymbol, "blah blah blah");
-		gemini1 = new Sign (windowWidth/2, windowHeight-100, gemini, geminiSymbol, "blah blah blah");
-		cancer1 = new Sign (windowWidth/2+215,windowHeight/2+255, cancer, cancerSymbol, "blah blah blah");
-		leo1 = new Sign (windowWidth/2+370,windowHeight/2+175, leo, leoSymbol, "blah blah blah");
-		virgo1 = new Sign (windowWidth/2+475,windowHeight/2, virgo, virgoSymbol, "blah blah blah");
-		libra1 = new Sign (windowWidth/2+380,windowHeight/2-150, libra, libraSymbol, "blah blah blah");
-		scorpio1 = new Sign (windowWidth/2+260,windowHeight/2-270, scorpio, scorpioSymbol, "blah blah blah");
-		sagittarius1 = new Sign (windowWidth/2,100, sagittarius,sagittariusSymbol, "blah blah blah");
-		capricorn1 = new Sign (windowWidth/2-225,windowHeight/2-285, capricorn, capricornSymbol, "blah blah blah");
-		aquarius1 = new Sign (windowWidth/2-400,windowHeight/2-195, aquarius, aquariusSymbol,"blah blah blah");
-		pisces1 = new Sign (windowWidth/2-475,windowHeight/2, pisces, piscesSymbol, "blah blah blah");
+		aries1 =  new Sign (windowWidth/2-425,windowHeight/2+175, aries, ariesSymbol);
+		taurus1 =  new Sign (windowWidth/2-215,windowHeight/2+255, taurus, taurusSymbol);
+		gemini1 = new Sign (windowWidth/2, windowHeight-100, gemini, geminiSymbol);
+		cancer1 = new Sign (windowWidth/2+215,windowHeight/2+255, cancer, cancerSymbol);
+		leo1 = new Sign (windowWidth/2+370,windowHeight/2+175, leo, leoSymbol);
+		virgo1 = new Sign (windowWidth/2+475,windowHeight/2, virgo, virgoSymbol);
+		libra1 = new Sign (windowWidth/2+380,windowHeight/2-150, libra, libraSymbol);
+		scorpio1 = new Sign (windowWidth/2+260,windowHeight/2-270, scorpio, scorpioSymbol);
+		sagittarius1 = new Sign (windowWidth/2,100, sagittarius,sagittariusSymbol);
+		capricorn1 = new Sign (windowWidth/2-225,windowHeight/2-285, capricorn, capricornSymbol);
+		aquarius1 = new Sign (windowWidth/2-400,windowHeight/2-195, aquarius, aquariusSymbol);
+		pisces1 = new Sign (windowWidth/2-475,windowHeight/2, pisces, piscesSymbol);
 
 		none = new SignText ("PAGE TITLE", "Select a sign.");
 
-		ariesT = new SignText ("ARIES", "It's a lion.");
+		ariesT = new SignText ("ARIES", "March 21 - April 19", ariesText);
 		taurusT = new SignText ("Taurus", "It's a lion.");
 		geminiT = new SignText ("GEMINI", "It's a lion.");
 		cancerT = new SignText ("CANCER", "It's a crab.");
@@ -117,88 +133,75 @@ function setup(){
 
 		activeSign = "none";
 
-		if (mouseX>845 && mouseX<945){
-				if (mouseY>550 && mouseY<690){
+		if (mouseX>815 && mouseX<890 && mouseY>550 && mouseY<690){
 					activeSign = "cancer";
 					cancer1.drawSymbol()
-				}
+					cancerT.drawText();
 			} else {cancer1.drawSign();}
 
-		if (mouseX>980 && mouseX<1090){
-				if (mouseY>441 && mouseY<641){
+		if (mouseX>980 && mouseX<1090 && mouseY>494 && mouseY<610){
 					activeSign = "leo";
 					leo1.drawSymbol();
-				}
+					leoT.drawText();
 		} else {leo1.drawSign();}
 
-		if (mouseX>168 && mouseX<345){
-				if (mouseY>490 && mouseY<600){
+		if (mouseX>130 && mouseX<250 && mouseY>490 && mouseY<600){
 					activeSign = "aries";
 					aries1.drawSymbol();
-				}
+					ariesT.drawText();
 		} else {aries1.drawSign();}
 
-		if (mouseX>144 && mouseX<344){
-				if (mouseY>80 && mouseY<290){
+		if (mouseX>140 && mouseX<270 && mouseY>136 && mouseY<235){
 					activeSign = "aquarius";
 					aquarius1.drawSymbol();
-				}
+					aquariusT.drawText();
 		} else {aquarius1.drawSign();}
 
-		if (mouseX>400 && mouseX<520){
-				if (mouseY>10 && mouseY<180){
+		if (mouseX>380 && mouseX<468 && mouseY>45 && mouseY<150){
 					activeSign = "capricorn";
 					capricorn1.drawSymbol();
-					}
+					capricornT.drawText();
 		} else {capricorn1.drawSign();}
 
-		if (mouseX>570 && mouseX<810){
-				if (mouseY>540 && mouseY<730){
+		if (mouseX>570 && mouseX<810 && mouseY>540 && mouseY<730){
 					activeSign = "gemini";
 					gemini1.drawSymbol();
-				}
+					geminiT.drawText();
 		} else {gemini1.drawSign();}
 
-		if (mouseX>144 && mouseX<344){
-				if (mouseY>80 && mouseY<290){
+		if (mouseX>965 && mouseX<1075 && mouseY>145 && mouseY<260){
 					activeSign = "libra";
 					libra1.drawSymbol();
-				}
+					libraT.drawText();
 		} else {libra1.drawSign();}
 
-		if (mouseX>144 && mouseX<344){
-				if (mouseY>80 && mouseY<290){
+		if (mouseX>349 && mouseX<489 && mouseY>578 && mouseY<700){
 					activeSign = "taurus";
 					taurus1.drawSymbol();
-				}
 		} else {taurus1.drawSign();}
 
-		if (mouseX>144 && mouseX<344){
-				if (mouseY>80 && mouseY<290){
+		if (mouseX>1090 && mouseX<1166 && mouseY>318 && mouseY<428){
 					activeSign = "virgo";
 					virgo1.drawSymbol();
-				}
+					virgoT.drawText();
 		} else {virgo1.drawSign();}
 
-		if (mouseX>144 && mouseX<344){
-				if (mouseY>80 && mouseY<290){
+		if (mouseX>820 && mouseX<940 && mouseY>80 && mouseY<180){
 					activeSign = "scorpio";
 					scorpio1.drawSymbol();
-				}
+					scorpioT.drawText();
 		} else {scorpio1.drawSign();}
 
-		if (mouseX>144 && mouseX<344){
-				if (mouseY>80 && mouseY<290){
+		if (mouseX>100 && mouseX<220 && mouseY>307 && mouseY<430){
 					activeSign = "pisces";
 					pisces1.drawSymbol();
-				}
+					piscesT.drawText();
 		} else {pisces1.drawSign();}
 
-		if (mouseX>144 && mouseX<344){
-				if (mouseY>80 && mouseY<290){
+		if (mouseX>528 && mouseX<650 && mouseY>80 && mouseY<290){
 					activeSign = "sagittarius";
 					sagittarius1.drawSymbol();
-				}
+					sagittariusT.drawText();
 		} else {sagittarius1.drawSign();}
 
 
@@ -266,7 +269,6 @@ function setup(){
 
 		text (mouseX+"," + mouseY, mouseX, mouseY);
 
-
 }
 
 function Star1 (x,y,col){
@@ -302,12 +304,11 @@ function Star1 (x,y,col){
 			}
 		}
 
-		function Sign (x,y,img,symbol,words){
+		function Sign (x,y,img,symbol){
 			this.png = img;
 			this.symbol = symbol;
 			this.x = x;
 			this.y = y;
-			this.words = words;
 			this.drawSymbol = function(){
 				image(this.symbol,this.x,this.y); }
 			this.drawSign = function(){
@@ -319,7 +320,12 @@ function Star1 (x,y,col){
 				text (this.words,this.x,this.y);
 			}
 }
-			function SignText (name, desc){
+			function SignText (name, desc, img){
 				this.name = name;
 				this.desc = desc;
+				this.png = img;
+				this.drawText = function(){
+					image(this.png, windowWidth/2,windowHeight/2);
+
 			}
+}
